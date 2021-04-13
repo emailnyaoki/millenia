@@ -1,0 +1,51 @@
+-- Table: public.barang
+
+-- DROP TABLE public.barang;
+
+CREATE TABLE public.barang
+(
+    id uuid NOT NULL DEFAULT uuid_generate_v4(),
+    "isActive" boolean NOT NULL DEFAULT true,
+    "isArchived" boolean NOT NULL DEFAULT false,
+    "createDateTime" timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "createdBy" character varying(300) COLLATE pg_catalog."default",
+    "lastChangedDateTime" timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "lastChangedBy" character varying(300) COLLATE pg_catalog."default",
+    "internalComment" character varying(300) COLLATE pg_catalog."default",
+    nama character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    keterangan character varying(200) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT "PK_86f8ff3e7bb396954483c21b10c" PRIMARY KEY (id),
+    CONSTRAINT "UQ_ad1e897461e2a694393c69a4bf7" UNIQUE (nama)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.barang
+    OWNER to postgres;
+    
+    
+-- Table: public."user"
+
+-- DROP TABLE public."user";
+
+CREATE TABLE public."user"
+(
+    id uuid NOT NULL DEFAULT uuid_generate_v4(),
+    "isActive" boolean NOT NULL DEFAULT true,
+    "isArchived" boolean NOT NULL DEFAULT false,
+    "createDateTime" timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "createdBy" character varying(300) COLLATE pg_catalog."default",
+    "lastChangedDateTime" timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "lastChangedBy" character varying(300) COLLATE pg_catalog."default",
+    "internalComment" character varying(300) COLLATE pg_catalog."default",
+    email character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    hashedpassword character varying(200) COLLATE pg_catalog."default" NOT NULL,
+    nama character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT "PK_03b91d2b8321aa7ba32257dc321" PRIMARY KEY (id),
+    CONSTRAINT "UQ_b7a5e4a3b174e954b2dabf2ef9e" UNIQUE (email)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."user"
+    OWNER to postgres;
