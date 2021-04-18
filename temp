@@ -1,0 +1,73 @@
+# Parking Lot Problem - DKatalis
+
+### Specifications
+
+* Runtime: Node.js
+* Language: TypeScript (and view of JavaScript)
+* JavaScript Testing Framework : Jest
+
+## Structure
+
+* parking_lot_2.0.0
+  * bin
+  * functional_spec
+  * src
+    * main
+    * test
+    * controller
+
+
+
+## Installation
+
+```
+$ npm install
+
+```
+
+## Test
+
+```
+$ npm test
+
+```
+
+## Build
+
+```
+$ npm run build
+
+```
+
+## Start
+
+if using file as input
+```
+$ npm run start {file_input.txt}
+```
+
+if using user input command
+```
+$ npm run start
+```
+
+or
+
+```
+$ node built/app.js {file_input.txt}
+```
+
+
+
+## Functional Test (Aruba)
+
+You can run the full suite from `parking_lot` by doing
+
+```
+parking_lot $ bin/run_functional_tests
+```
+
+You can run the full suite directly from `parking_lot/functional_spec` by doing
+
+```
+parking_lot/functional_spec $ bundle exec rake spec:functional
